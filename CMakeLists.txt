@@ -25,4 +25,8 @@ target_link_libraries(QueueTest Queue Doctest)
 
 add_test(NAME QueueTest COMMAND QueueTest)
 
+add_executable(DedupLinkedList chapter10/DedupeLinkedList.cpp)
+
+add_executable(LinkedList chapter10/LinkedList.cpp)
+
 add_executable(class_examples main.cpp)
