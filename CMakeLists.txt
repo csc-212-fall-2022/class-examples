@@ -25,8 +25,19 @@ target_link_libraries(QueueTest Queue Doctest)
 
 add_test(NAME QueueTest COMMAND QueueTest)
 
-add_executable(DedupLinkedList chapter10/DedupeLinkedList.cpp)
+#add_executable(DedupLinkedList chapter10/DedupeLinkedList.cpp)
 
 add_executable(LinkedList chapter10/LinkedList.cpp)
+
+add_library(ChainedHashTable chapter11/ChainedHashTable.hpp chapter11/HashTableNode.hpp)
+set_target_properties(ChainedHashTable PROPERTIES LINKER_LANGUAGE CXX)
+
+add_executable(ChainedHashTableTest chapter11/ChainedHashTable.test.cpp)
+target_link_libraries(ChainedHashTableTest Doctest ChainedHashTable)
+
+add_test(NAME ChainedHashTableTest COMMAND ChainedHashTableTest)
+
+add_library(HashTables chapter11/ChainedHashTable.hpp chapter11/HashTableNode.hpp)
+set_target_properties(HashTables PROPERTIES LINKER_LANGUAGE CXX)
 
 add_executable(class_examples main.cpp)

@@ -35,8 +35,8 @@ public:
 
   void Delete(DLNode *node) {
     if (node == head) {
-        head = node->next;
-        head->prev = nullptr;
+      head = node->next;
+      head->prev = nullptr;
     }
 
     // as long as node->prev exists, we're done
@@ -44,7 +44,7 @@ public:
     node->prev->next = node->next;
     // guard against the case where node was last
     if (node->next != nullptr) {
-        node->next->prev = node->prev;
+      node->next->prev = node->prev;
     }
     delete node; // debatable whether this is a good idea
   }
