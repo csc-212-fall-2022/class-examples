@@ -40,4 +40,8 @@ add_test(NAME ChainedHashTableTest COMMAND ChainedHashTableTest)
 add_library(HashTables chapter11/ChainedHashTable.hpp chapter11/HashTableNode.hpp)
 set_target_properties(HashTables PROPERTIES LINKER_LANGUAGE CXX)
 
+add_library(BloomFilter bloomfilter/BloomFilter.hpp bloomfilter/BloomFilter.cpp)
+add_executable(BloomFilterTest bloomfilter/BloomFilter.test.cpp)
+target_link_libraries(BloomFilterTest BloomFilter Doctest)
+
 add_executable(class_examples main.cpp)
