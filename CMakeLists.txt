@@ -25,8 +25,6 @@ target_link_libraries(QueueTest Queue Doctest)
 
 add_test(NAME QueueTest COMMAND QueueTest)
 
-#add_executable(DedupLinkedList chapter10/DedupeLinkedList.cpp)
-
 add_executable(LinkedList chapter10/LinkedList.cpp)
 
 add_library(ChainedHashTable chapter11/ChainedHashTable.hpp chapter11/HashTableNode.hpp)
@@ -43,5 +41,12 @@ set_target_properties(HashTables PROPERTIES LINKER_LANGUAGE CXX)
 add_library(BloomFilter bloomfilter/BloomFilter.hpp bloomfilter/BloomFilter.cpp)
 add_executable(BloomFilterTest bloomfilter/BloomFilter.test.cpp)
 target_link_libraries(BloomFilterTest BloomFilter Doctest)
+
+add_library(BinarySearchTrees chapter12/BinarySearchTree.hpp chapter12/BinarySearchTree.cpp)
+add_executable(BSTDemo chapter12/BinarySearchTreeDemo.cpp)
+target_link_libraries(BSTDemo BinarySearchTrees)
+
+add_executable(BinarySearchTreeTest chapter12/BinarySearchTree.test.cpp)
+target_link_libraries(BinarySearchTreeTest BinarySearchTrees Doctest)
 
 add_executable(class_examples main.cpp)
