@@ -49,11 +49,20 @@ target_link_libraries(BSTDemo BinarySearchTrees)
 add_executable(BinarySearchTreeTest chapter12/BinarySearchTree.test.cpp)
 target_link_libraries(BinarySearchTreeTest BinarySearchTrees Doctest)
 
-add_library(Sorts chapter8/CountingSort.hpp chapter7/Quicksort.cpp chapter8/CountingSort.cpp chapter8/RadixSort.cpp chapter8/RadixSort.hpp)
+add_library(Sorts chapter8/CountingSort.hpp chapter7/Quicksort.cpp chapter8/CountingSort.cpp
+    chapter8/RadixSort.cpp chapter8/RadixSort.hpp
+    chapter8/BucketSort.cpp chapter8/BucketSort.hpp)
 add_executable(CountingSortTest chapter8/CountingSort.test.cpp)
 target_link_libraries(CountingSortTest Sorts Doctest)
 
 add_executable(RadixSortTest chapter8/RadixSort.test.cpp)
 target_link_libraries(RadixSortTest Sorts Doctest)
+add_test(RadixSortTest RadixSortTest)
+
+add_executable(BucketSortTest chapter8/BucketSort.test.cpp)
+target_link_libraries(BucketSortTest Sorts Doctest)
+add_test(BucketSortTest BucketSortTest)
+
+add_library(Graphs chapter22/Graph.cpp chapter22/Graph.hpp chapter22/Digraph.cpp chapter22/Digraph.hpp)
 
 add_executable(class_examples main.cpp)

@@ -55,7 +55,7 @@ auto CountingSort(const std::vector<int> &A, const int &k,
   }
 
   // walk backwards
-  for (int i= A.size() - 1; i > -1; i--) {
+  for (int i= A.size() - 1; i > -1; i--) { // NOLINT
     int key = func(A.at(i));
     int target_index = counts.at(key) - 1; // index from 0
     result.at(target_index) = A.at(i); // place the actual value, not the key
