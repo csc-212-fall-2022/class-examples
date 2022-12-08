@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
 project("class examples")
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_CXX_STANDARD 17)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -ggdb3 -Og")
@@ -63,6 +64,10 @@ add_executable(BucketSortTest chapter8/BucketSort.test.cpp)
 target_link_libraries(BucketSortTest Sorts Doctest)
 add_test(BucketSortTest BucketSortTest)
 
+add_library(Heaps chapter6/MaxHeap.cpp chapter6/MaxHeap.hpp chapter6/HeapSort.cpp)
+
 add_library(Graphs chapter22/Graph.cpp chapter22/Graph.hpp chapter22/Digraph.cpp chapter22/Digraph.hpp)
+
+add_library(Dijkstra chapter24/Graph.hpp chapter24/Graph.cpp)
 
 add_executable(class_examples main.cpp)

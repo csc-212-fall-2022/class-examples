@@ -9,7 +9,7 @@ auto Left(int idx) -> int { return 2 * idx + 1; }
 auto Right(int idx) -> int { return 2 * idx + 2; }
 
 void MaxHeapify(MaxHeap &heap, int idx) {
-  // remember that we have supposed the left and right subrees are themselves
+  // remember that we have supposed the left and right subtrees are themselves
   // heaps
   int left_idx = Left(idx);
   int right_idx = Right(idx);
@@ -32,6 +32,7 @@ void MaxHeapify(MaxHeap &heap, int idx) {
   if (largest_idx != idx) {
     heap.vec.at(largest_idx) = heap.vec.at(idx);
     heap.vec.at(idx) = largest_value;
+    // need to recurse and call MaxHeapify on the index we swapped to
   }
 }
 
@@ -42,4 +43,6 @@ void BuildMaxHeap(MaxHeap &heap) {
     MaxHeapify(heap, idx);
   }
 }
+
+
 } // namespace chapter6
